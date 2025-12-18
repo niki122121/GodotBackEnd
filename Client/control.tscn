@@ -9,4 +9,39 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="SendMessageButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 400.0
+offset_right = 575.0
+offset_bottom = 450.0
+scale = Vector2(2, 2)
+text = "Send Message"
+
+[node name="ConnectButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 170.0
+offset_right = 300.0
+offset_bottom = 220.0
+scale = Vector2(2, 2)
+text = "Connect to server"
+
+[node name="DisconnectButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 170.0
+offset_right = 850.0
+offset_bottom = 220.0
+scale = Vector2(2, 2)
+text = "Disconnect from server"
+
+[node name="Client" type="Node" parent="."]
+
+[node name="Handler" type="Node" parent="."]
 script = ExtResource("1_0fbet")
+
+[connection signal="pressed" from="SendMessageButton" to="Handler" method="_on_send_message_button_pressed"]
+[connection signal="pressed" from="ConnectButton" to="Handler" method="_on_connect_button_pressed"]
+[connection signal="pressed" from="DisconnectButton" to="Handler" method="_on_disconnect_button_pressed"]
