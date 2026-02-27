@@ -1,8 +1,8 @@
 extends Node
 
-const HOST: String = "127.0.0.1"
-const PORT: int = 6664
-const RECONNECT_TIMEOUT: float = 3.0
+const HOST: String = "193.147.60.26"
+const PORT: int = 443
+const RECONNECT_TIMEOUT: float = 5.0
 
 const Client = preload("res://client.gd")
 var _client: Client = Client.new()
@@ -13,7 +13,7 @@ func _ready() -> void:
 	_client.error.connect(_handle_client_error)
 	_client.receivedData.connect(_handle_server_data)
 	add_child(_client)
-	_client.connect_to_host(HOST, PORT)
+	#_client.connect_to_host(HOST, PORT)
 
 func _connect_after_timeout(timeout: float) -> void:
 	await get_tree().create_timer(timeout).timeout # Delay for timeout
@@ -36,7 +36,7 @@ func _handle_client_disconnected() -> void:
 
 func _handle_client_error() -> void:
 	print("Client error.")
-	_connect_after_timeout(RECONNECT_TIMEOUT) # Try to reconnect after 3 seconds
+	#_connect_after_timeout(RECONNECT_TIMEOUT) # Try to reconnect after 3 seconds
 
 func _on_send_message_button_pressed() -> void:
 	var bytes: PackedByteArray = [104, 101, 108, 108, 111] # Bytes for "hello" in ASCII

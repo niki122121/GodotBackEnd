@@ -11,6 +11,11 @@ config_version=5
 [application]
 
 config/name="TCP-Client"
-run/main_scene="uid://c421gsy5c3qk0"
+run/main_scene="uid://btcvbp36xu15n"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=720

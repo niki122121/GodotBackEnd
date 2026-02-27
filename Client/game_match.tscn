@@ -1,0 +1,169 @@
+[gd_scene load_steps=3 format=3 uid="uid://btcvbp36xu15n"]
+
+[ext_resource type="Script" uid="uid://5u6mk00126g3" path="res://game_logic.gd" id="2_4ptv0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ioh0y"]
+size = Vector2(380, 270)
+
+[node name="GameMatch" type="Node2D"]
+
+[node name="Battlefield" type="PanelContainer" parent="."]
+offset_left = 80.0
+offset_top = 170.0
+offset_right = 1000.0
+offset_bottom = 550.0
+
+[node name="BattlefieldLeft" type="Area2D" parent="Battlefield"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battlefield/BattlefieldLeft"]
+position = Vector2(230, 190)
+shape = SubResource("RectangleShape2D_ioh0y")
+
+[node name="BattlefieldRight" type="Area2D" parent="Battlefield"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battlefield/BattlefieldRight"]
+position = Vector2(690, 190)
+shape = SubResource("RectangleShape2D_ioh0y")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." groups=["cards_ui"]]
+
+[node name="PlayerHand" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -325.0
+offset_top = -140.0
+offset_right = 325.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PlayerBoard" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -325.0
+offset_top = -320.0
+offset_right = 325.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="EnemyHand" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -325.0
+offset_top = 30.0
+offset_right = 325.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="EnemyBoard" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -325.0
+offset_top = 210.0
+offset_right = 325.0
+offset_bottom = 320.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PlayerDrawButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -110.0
+offset_right = 190.0
+offset_bottom = -60.0
+grow_vertical = 0
+text = "Draw card"
+
+[node name="EndTurnButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 890.0
+offset_top = -110.0
+offset_right = 1040.0
+offset_bottom = -60.0
+grow_vertical = 0
+text = "End Turn"
+
+[node name="EnemyDrawButton" type="Button" parent="CanvasLayer"]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -660.0
+offset_right = 190.0
+offset_bottom = -610.0
+grow_vertical = 0
+text = "Draw card"
+
+[node name="EnemyPlayButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 890.0
+offset_top = -660.0
+offset_right = 1040.0
+offset_bottom = -610.0
+grow_vertical = 0
+text = "Play card"
+
+[node name="EnemyHealthLabel" type="Label" parent="CanvasLayer"]
+offset_left = 30.0
+offset_top = 10.0
+offset_right = 130.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerHealthLabel" type="Label" parent="CanvasLayer"]
+offset_left = 30.0
+offset_top = 70.0
+offset_right = 130.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TurnLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameLogic" type="Node" parent="."]
+script = ExtResource("2_4ptv0")
+
+[connection signal="pressed" from="CanvasLayer/PlayerDrawButton" to="GameLogic" method="_on_player_draw_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/EndTurnButton" to="GameLogic" method="_on_end_turn_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/EnemyDrawButton" to="GameLogic" method="_on_enemy_draw_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/EnemyPlayButton" to="GameLogic" method="_on_enemy_play_button_pressed"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvnbjk2yjy5yw"]
+
+[ext_resource type="PackedScene" uid="uid://b2d6b82tf77sq" path="res://card_object.tscn" id="1_1hajh"]
+
+[node name="CardObject" instance=ExtResource("1_1hajh")]
+
+[node name="CardStats" parent="." index="0"]
+health = 3
+attack = 3
+title = "Swordsman"
