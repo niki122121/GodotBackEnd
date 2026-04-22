@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddpcc8xmmyrgx"]
+
+[ext_resource type="PackedScene" uid="uid://b2d6b82tf77sq" path="res://card_object.tscn" id="1_0kojn"]
+
+[node name="CardObject" instance=ExtResource("1_0kojn")]
+
+[node name="CardStats" parent="." index="0"]
+health = 3
+attack = 3
+title = "Normal 1"

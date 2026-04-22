@@ -4,7 +4,7 @@ const HOST: String = "193.147.60.26"
 const PORT: int = 443
 const RECONNECT_TIMEOUT: float = 5.0
 
-const Client = preload("res://client.gd")
+const Client = preload("res://scripts/client.gd")
 var _client: Client = Client.new()
 
 func _ready() -> void:

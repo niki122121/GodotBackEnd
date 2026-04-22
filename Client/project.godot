@@ -15,6 +15,10 @@ run/main_scene="uid://btcvbp36xu15n"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Constants="*res://scripts/global_constants.gd"
+
 [display]
 
 window/size/viewport_width=1080

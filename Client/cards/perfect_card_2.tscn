@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6n5j57pdea0p"]
+
+[ext_resource type="PackedScene" uid="uid://b2d6b82tf77sq" path="res://card_object.tscn" id="1_g5it3"]
+[ext_resource type="Script" uid="uid://cqiccfy35f7y8" path="res://scripts/card_scripts/perfect_stat_2.gd" id="2_cfc7m"]
+
+[node name="CardObject" instance=ExtResource("1_g5it3")]
+
+[node name="CardStats" parent="." index="0"]
+script = ExtResource("2_cfc7m")
+health = 3
+attack = 2
+title = "+3 HP adj"

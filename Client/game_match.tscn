@@ -1,9 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://btcvbp36xu15n"]
+[gd_scene load_steps=5 format=3 uid="uid://btcvbp36xu15n"]
 
-[ext_resource type="Script" uid="uid://5u6mk00126g3" path="res://game_logic.gd" id="2_4ptv0"]
+[ext_resource type="Script" uid="uid://5u6mk00126g3" path="res://scripts/game_logic.gd" id="2_4ptv0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ioh0y"]
 size = Vector2(380, 270)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1l1g"]
+bg_color = Color(0.9334889, 0.2643525, 0.22146037, 0.39215687)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.19215687, 0.15686275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ptv0"]
+bg_color = Color(0.30975363, 0.526211, 0.92759615, 0.39215687)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.39208937, 0.5433774, 0.93352747, 1)
 
 [node name="GameMatch" type="Node2D"]
 
@@ -20,12 +36,44 @@ collision_layer = 2
 position = Vector2(230, 190)
 shape = SubResource("RectangleShape2D_ioh0y")
 
+[node name="PanelLeft" type="Panel" parent="Battlefield/BattlefieldLeft/CollisionShape2D"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -135.0
+offset_right = 190.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x1l1g")
+
 [node name="BattlefieldRight" type="Area2D" parent="Battlefield"]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Battlefield/BattlefieldRight"]
 position = Vector2(690, 190)
 shape = SubResource("RectangleShape2D_ioh0y")
+
+[node name="PanelRight" type="Panel" parent="Battlefield/BattlefieldRight/CollisionShape2D"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -135.0
+offset_right = 190.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4ptv0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["cards_ui"]]
 

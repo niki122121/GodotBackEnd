@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://drw35ain175q0"]
+
+[ext_resource type="PackedScene" uid="uid://b2d6b82tf77sq" path="res://card_object.tscn" id="1_b42fl"]
+[ext_resource type="Script" uid="uid://usprv84i4w2e" path="res://scripts/card_scripts/private_stat_1.gd" id="2_o8tfe"]
+
+[node name="CardObject" instance=ExtResource("1_b42fl")]
+
+[node name="CardStats" parent="." index="0"]
+script = ExtResource("2_o8tfe")
+health = 7
+title = "+1 HP hand"

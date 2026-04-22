@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://mb02qu47a222"]
+
+[ext_resource type="PackedScene" uid="uid://b2d6b82tf77sq" path="res://card_object.tscn" id="1_g57ug"]
+[ext_resource type="Script" uid="uid://ce8a0yt1ul2mv" path="res://scripts/card_scripts/deck_stat_1.gd" id="2_geaj5"]
+
+[node name="CardObject" instance=ExtResource("1_g57ug")]
+
+[node name="CardStats" parent="." index="0"]
+script = ExtResource("2_geaj5")
+health = 2
+title = "+1ATK deck"
