@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dt1gi7urxtf3q"]
 
-[ext_resource type="PackedScene" uid="uid://b2d6b82tf77sq" path="res://card_object.tscn" id="1_52sdt"]
+[ext_resource type="PackedScene" uid="uid://b2d6b82tf77sq" path="res://cards/card_object.tscn" id="1_52sdt"]
 [ext_resource type="Script" uid="uid://c2yhv0c4aqtws" path="res://scripts/card_scripts/private_stat_2.gd" id="2_j6iul"]
-[ext_resource type="Texture2D" uid="uid://bdv430noob0w8" path="res://sprites/card_sprite_05.png" id="3_j6iul"]
+[ext_resource type="Texture2D" uid="uid://bdv430noob0w8" path="res://sprites/cards/card_sprite_05.png" id="3_j6iul"]
 
 [node name="CardObject" instance=ExtResource("1_52sdt")]
 

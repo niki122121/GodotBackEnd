@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://mb02qu47a222"]
 
-[ext_resource type="PackedScene" uid="uid://b2d6b82tf77sq" path="res://card_object.tscn" id="1_g57ug"]
+[ext_resource type="PackedScene" uid="uid://b2d6b82tf77sq" path="res://cards/card_object.tscn" id="1_g57ug"]
 [ext_resource type="Script" uid="uid://ce8a0yt1ul2mv" path="res://scripts/card_scripts/deck_stat_1.gd" id="2_geaj5"]
-[ext_resource type="Texture2D" uid="uid://bqs6y2brvq4kc" path="res://sprites/card_sprite_10.png" id="3_geaj5"]
+[ext_resource type="Texture2D" uid="uid://bqs6y2brvq4kc" path="res://sprites/cards/card_sprite_10.png" id="3_geaj5"]
 
 [node name="CardObject" instance=ExtResource("1_g57ug")]
 
