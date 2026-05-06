@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://2tsox2mjyexq"]
+[gd_scene load_steps=4 format=3 uid="uid://2tsox2mjyexq"]
 
 [ext_resource type="PackedScene" uid="uid://b2d6b82tf77sq" path="res://card_object.tscn" id="1_82u13"]
 [ext_resource type="Script" uid="uid://bj1quh3xblhkd" path="res://scripts/card_scripts/perfect_stat_5.gd" id="2_rlxur"]
+[ext_resource type="Texture2D" uid="uid://byoqbpymj4hsg" path="res://sprites/card_sprite_32.png" id="3_5gash"]
 
 [node name="CardObject" instance=ExtResource("1_82u13")]
 
@@ -10,3 +11,6 @@ script = ExtResource("2_rlxur")
 health = 2
 attack = 2
 title = "+1 HP +1 ATK"
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("3_5gash")

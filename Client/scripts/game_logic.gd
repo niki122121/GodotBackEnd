@@ -64,11 +64,12 @@ func update_turn_label() -> void:
 
 
 func card_battle(attacker: CardStats, defender: CardStats) -> void:
+	var attack_offset = Vector2.DOWN * 55 if _is_player_turn else Vector2.UP * 55
 	attacker.get_parent().z_index = 1
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_EXPO)
 	tween.tween_property(attacker.get_parent(), "global_position", 
-			defender.get_parent().global_position, Constants.TIME_ATTACK_ANIM)
+			defender.get_parent().global_position + attack_offset, Constants.TIME_ATTACK_ANIM)
 	tween.set_trans(Tween.TRANS_SINE)
 	tween.tween_property(attacker.get_parent(), "global_position", 
 			attacker.get_parent().global_position, Constants.TIME_ATTACK_ANIM)

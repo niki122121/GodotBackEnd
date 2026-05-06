@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://i2xjurfthsfy"]
+[gd_scene load_steps=3 format=3 uid="uid://i2xjurfthsfy"]
 
 [ext_resource type="PackedScene" uid="uid://b2d6b82tf77sq" path="res://card_object.tscn" id="1_1tgod"]
+[ext_resource type="Texture2D" uid="uid://cgouxxpystux3" path="res://sprites/card_sprite_16.png" id="2_v0imb"]
 
 [node name="CardObject" instance=ExtResource("1_1tgod")]
 
@@ -8,3 +9,6 @@
 health = 5
 attack = 1
 title = "Normal 5"
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_v0imb")
