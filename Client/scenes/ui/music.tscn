@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://7rgtt21so12c"]
+
+[ext_resource type="AudioStream" uid="uid://3kbhij67g04o" path="res://sounds/music/Realm_Weaver_Theme (1).mp3" id="1_ibx2e"]
+[ext_resource type="Script" uid="uid://c2k5w2y6rk0jw" path="res://scripts/ui_scripts/changeMusic.gd" id="2_qnihg"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_ibx2e")
+volume_db = -80.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+script = ExtResource("2_qnihg")

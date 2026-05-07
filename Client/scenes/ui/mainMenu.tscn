@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://bliu6cout3ktq"]
+
+[ext_resource type="Script" uid="uid://bni2nwos7y5yu" path="res://scripts/ui_scripts/scenesManager.gd" id="1_b7htb"]
+[ext_resource type="PackedScene" uid="uid://b0hgerb0kgo0t" path="res://scenes/ui/parallax.tscn" id="2_yl13b"]
+[ext_resource type="PackedScene" uid="uid://ds5hv8hqh4vuf" path="res://scenes/ui/button.tscn" id="3_3uny1"]
+[ext_resource type="AudioStream" uid="uid://cvf6pnqd0hcdw" path="res://sounds/SFX/RobarCarta2.mp3" id="4_yl13b"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b7htb")
+
+[node name="Background" parent="." instance=ExtResource("2_yl13b")]
+z_index = -10
+layout_mode = 1
+script = null
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -282.0
+offset_top = -325.0
+offset_right = 282.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 129
+theme_override_constants/v_separation = -61
+columns = 2
+
+[node name="Play" parent="MarginContainer/GridContainer" instance=ExtResource("3_3uny1")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Tutorial" parent="MarginContainer/GridContainer" instance=ExtResource("3_3uny1")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Tutorial"
+
+[node name="Settings" parent="MarginContainer/GridContainer" instance=ExtResource("3_3uny1")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Settings"
+
+[node name="Exit" parent="MarginContainer/GridContainer" instance=ExtResource("3_3uny1")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yl13b")
+bus = &"SFX"
+
+[connection signal="pressed" from="MarginContainer/GridContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://ds5hv8hqh4vuf"]
+
+[ext_resource type="Theme" uid="uid://cw2ae0duv2nwi" path="res://themes/buttonTheme.tres" id="1_0kpiu"]
+[ext_resource type="Texture2D" uid="uid://c42is2ut7kdbr" path="res://sprites/buttons/GenericButton.png" id="1_1cmwl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cmwl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_smycg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0kpiu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iju5o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_edukx"]
+
+[node name="Button" type="Button"]
+texture_filter = 1
+offset_right = 232.0
+offset_bottom = 104.0
+theme = ExtResource("1_0kpiu")
+theme_override_colors/font_color = Color(0.26666668, 0.1764706, 0.14901961, 1)
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1cmwl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_smycg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0kpiu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_iju5o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_edukx")
+text = "Play"
+icon = ExtResource("1_1cmwl")
+icon_alignment = 1
+expand_icon = true

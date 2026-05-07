@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crrybee4xq850"
+path="res://.godot/imported/piratas 1.mp3-262bfc84e6356ae28984168242c1a9b8.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/piratas 1.mp3"
+dest_files=["res://.godot/imported/piratas 1.mp3-262bfc84e6356ae28984168242c1a9b8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

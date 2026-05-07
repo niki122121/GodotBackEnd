@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmjv2wsx01g4w"]
+
+[ext_resource type="PackedScene" uid="uid://bouopneobo5hh" path="res://scenes/ui/background.tscn" id="1_4geyq"]
+[ext_resource type="PackedScene" uid="uid://yegdrjt34u3u" path="res://scenes/ui/backButton.tscn" id="2_i44u3"]
+[ext_resource type="Script" uid="uid://b0byrpxi1457c" path="res://scripts/ui_scripts/volumeSlider.gd" id="3_lhmql"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" parent="." instance=ExtResource("1_4geyq")]
+z_index = -10
+layout_mode = 1
+
+[node name="Button" parent="." instance=ExtResource("2_i44u3")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -104.0
+offset_bottom = 0.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.5
+offset_top = -95.0
+offset_right = 206.5
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Music" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Music volume"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_lhmql")
+busName = "Music"
+
+[node name="SFX" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "SFX volume"
+horizontal_alignment = 1
+
+[node name="HSlider2" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_lhmql")
+busName = "SFX"
