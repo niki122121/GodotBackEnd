@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ds5hv8hqh4vuf"]
+[gd_scene load_steps=9 format=3 uid="uid://ds5hv8hqh4vuf"]
 
 [ext_resource type="Theme" uid="uid://cw2ae0duv2nwi" path="res://themes/buttonTheme.tres" id="1_0kpiu"]
 [ext_resource type="Texture2D" uid="uid://c42is2ut7kdbr" path="res://sprites/buttons/GenericButton.png" id="1_1cmwl"]
+[ext_resource type="FontFile" uid="uid://cc2yaqr0wqi5t" path="res://fonts/jupiterc.ttf" id="2_vgxan"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cmwl"]
 
@@ -19,7 +20,8 @@ offset_right = 232.0
 offset_bottom = 104.0
 theme = ExtResource("1_0kpiu")
 theme_override_colors/font_color = Color(0.26666668, 0.1764706, 0.14901961, 1)
-theme_override_font_sizes/font_size = 41
+theme_override_fonts/font = ExtResource("2_vgxan")
+theme_override_font_sizes/font_size = 46
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1cmwl")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_smycg")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_0kpiu")

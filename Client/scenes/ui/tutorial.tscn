@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bh8th5k8jbybr"]
+[gd_scene load_steps=4 format=3 uid="uid://bh8th5k8jbybr"]
 
+[ext_resource type="FontFile" uid="uid://cc2yaqr0wqi5t" path="res://fonts/jupiterc.ttf" id="1_6e533"]
 [ext_resource type="PackedScene" uid="uid://bouopneobo5hh" path="res://scenes/ui/background.tscn" id="1_ka2pi"]
 [ext_resource type="PackedScene" uid="uid://yegdrjt34u3u" path="res://scenes/ui/backButton.tscn" id="2_feyax"]
 
@@ -25,11 +26,11 @@ offset_right = 65.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_6e533")
 theme_override_font_sizes/font_size = 55
-text = "TUTORIAL SCENE"
+text = "Esto es una prueba para ver la fuente"
 
 [node name="Background" parent="." instance=ExtResource("1_ka2pi")]
-z_index = -10
 layout_mode = 1
 
 [node name="Button" parent="." instance=ExtResource("2_feyax")]
