@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://dse785o03ukia"]
+
+[ext_resource type="PackedScene" uid="uid://bouopneobo5hh" path="res://scenes/ui/background.tscn" id="1_bykg5"]
+[ext_resource type="PackedScene" uid="uid://yegdrjt34u3u" path="res://scenes/ui/backButton.tscn" id="2_xfbjs"]
+[ext_resource type="PackedScene" uid="uid://ds5hv8hqh4vuf" path="res://scenes/ui/button.tscn" id="3_xfbjs"]
+
+[node name="PlayMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" parent="." instance=ExtResource("1_bykg5")]
+layout_mode = 1
+
+[node name="Button" parent="." instance=ExtResource("2_xfbjs")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -104.0
+offset_bottom = 0.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.5
+offset_top = -178.0
+offset_right = 155.5
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 46
+text = "ESCRIBA EL CÓDIGO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" parent="." instance=ExtResource("3_xfbjs")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = 102.0
+offset_right = 116.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.525
+offset_top = -31.720001
+offset_right = 215.52502
+offset_bottom = 43.72
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 46
+placeholder_text = "Código de la sala"
+alignment = 1

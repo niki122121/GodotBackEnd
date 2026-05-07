@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://g2crbrlsxxik" path="res://sprites/background/FondoParallax10.png" id="11_237w7"]
 
 [node name="Background" type="Control"]
+z_index = -10
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
