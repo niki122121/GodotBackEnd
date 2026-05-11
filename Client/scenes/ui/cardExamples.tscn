@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhi2sv6w8x7a2"]
+
+[ext_resource type="Script" uid="uid://baxflsy550f4d" path="res://scripts/ui_scripts/show_cards.gd" id="1_kv0b0"]
+[ext_resource type="Texture2D" uid="uid://ywbb8mtiwxb5" path="res://sprites/cards/card_sprite_00.png" id="2_wjgyo"]
+[ext_resource type="Texture2D" uid="uid://ctsothh3q6si3" path="res://sprites/cards/card_sprite_01.png" id="3_cuw6f"]
+[ext_resource type="Texture2D" uid="uid://b4p1kv1fsihlp" path="res://sprites/cards/card_sprite_02.png" id="4_ajchv"]
+
+[node name="CardExamples" type="Control" node_paths=PackedStringArray("rightCard", "leftCard")]
+custom_minimum_size = Vector2(80, 110)
+layout_mode = 3
+anchors_preset = 0
+pivot_offset = Vector2(40, 55)
+script = ExtResource("1_kv0b0")
+sizeMultiplier = 2.0
+rightCard = NodePath("RightCard")
+leftCard = NodePath("LeftCard")
+
+[node name="FirstCard" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_wjgyo")
+centered = false
+offset = Vector2(-8, -14)
+
+[node name="RightCard" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_cuw6f")
+centered = false
+offset = Vector2(-8, -14)
+
+[node name="LeftCard" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_ajchv")
+centered = false
+offset = Vector2(-8, -14)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,108 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmk47afbc0ayy"]
+
+[ext_resource type="PackedScene" uid="uid://dhi2sv6w8x7a2" path="res://scenes/ui/cardExamples.tscn" id="1_etk2n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lu5ms"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.78352344, 0.7835234, 0.7835234, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="CardsExplication" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 538.0
+offset_bottom = 358.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lu5ms")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -159.5
+offset_right = 94.0
+offset_bottom = -74.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hola esto es una prueba"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardExamples" parent="Panel" node_paths=PackedStringArray("panel") instance=ExtResource("1_etk2n")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -55.0
+offset_right = 40.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+panel = NodePath("../../ColorRect")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 542.0
+offset_right = 1080.0
+offset_bottom = 358.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lu5ms")
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 362.0
+offset_right = 538.0
+offset_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lu5ms")
+
+[node name="Panel4" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 362.0
+offset_right = 1080.0
+offset_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lu5ms")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.10980392, 0.10980392, 0.10980392, 0.6627451)

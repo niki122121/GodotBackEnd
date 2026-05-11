@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bh8th5k8jbybr"]
+[gd_scene load_steps=6 format=3 uid="uid://bh8th5k8jbybr"]
 
 [ext_resource type="FontFile" uid="uid://cc2yaqr0wqi5t" path="res://fonts/jupiterc.ttf" id="1_6e533"]
+[ext_resource type="Script" uid="uid://dkki0khtgv587" path="res://scripts/ui_scripts/changeSceneCards.gd" id="1_gcvyo"]
 [ext_resource type="PackedScene" uid="uid://bouopneobo5hh" path="res://scenes/ui/background.tscn" id="1_ka2pi"]
 [ext_resource type="PackedScene" uid="uid://yegdrjt34u3u" path="res://scenes/ui/backButton.tscn" id="2_feyax"]
+[ext_resource type="PackedScene" uid="uid://ds5hv8hqh4vuf" path="res://scenes/ui/button.tscn" id="5_nrihu"]
 
 [node name="TutorialMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gcvyo")
 
 [node name="Label" type="Label" parent="."]
 z_index = 1
@@ -20,10 +23,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -65.5
-offset_top = -11.5
-offset_right = 65.5
-offset_bottom = 11.5
+offset_left = -351.0
+offset_top = -137.25
+offset_right = 351.0
+offset_bottom = 137.25
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_6e533")
@@ -41,3 +44,20 @@ anchor_bottom = 1.0
 offset_top = -104.0
 offset_bottom = 0.0
 grow_vertical = 0
+
+[node name="nextButton" parent="." instance=ExtResource("5_nrihu")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -104.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Next"
+
+[connection signal="pressed" from="nextButton" to="." method="_on_next_button_pressed"]
