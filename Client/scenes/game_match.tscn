@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://btcvbp36xu15n"]
+[gd_scene load_steps=6 format=3 uid="uid://btcvbp36xu15n"]
 
+[ext_resource type="Texture2D" uid="uid://cufyelpk58yww" path="res://sprites/background/Background_Pirates.png" id="1_a0g8l"]
 [ext_resource type="Script" uid="uid://5u6mk00126g3" path="res://scripts/game_logic.gd" id="2_4ptv0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ioh0y"]
@@ -23,13 +24,15 @@ border_color = Color(0.39208937, 0.5433774, 0.93352747, 1)
 
 [node name="GameMatch" type="Node2D"]
 
-[node name="Battlefield" type="PanelContainer" parent="."]
-offset_left = 80.0
-offset_top = 170.0
-offset_right = 1000.0
-offset_bottom = 550.0
+[node name="BattlefieldBackground" type="Sprite2D" parent="."]
+scale = Vector2(0.5527123, 0.625)
+texture = ExtResource("1_a0g8l")
+centered = false
+
+[node name="Battlefield" type="Node2D" parent="."]
 
 [node name="BattlefieldLeft" type="Area2D" parent="Battlefield"]
+position = Vector2(80, 170)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Battlefield/BattlefieldLeft"]
@@ -52,6 +55,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x1l1g")
 
 [node name="BattlefieldRight" type="Area2D" parent="Battlefield"]
+position = Vector2(80, 170)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Battlefield/BattlefieldRight"]

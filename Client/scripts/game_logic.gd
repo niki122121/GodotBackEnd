@@ -16,6 +16,7 @@ extends Node
 
 var _is_player_turn = true
 var _cards_on_hand = 0
+var _cards_played_this_turn = 0
 var _player_health = Constants.INITIAL_HEALTH
 var _enemy_health = Constants.INITIAL_HEALTH
 var _player_deck: Array
@@ -28,6 +29,7 @@ func _ready() -> void:
 	Constants.modify_private_stats.connect(_on_modify_private_stats)
 	Constants.modify_board_from_private_stats.connect(_on_modify_board_from_private_stats)
 	Constants.toggle_panels.connect(_on_toggle_panels)
+	Constants.card_released.connect(_on_card_released)
 	
 	#Prepare cards and UI
 	var cards: Array[PackedScene]
@@ -64,15 +66,18 @@ func update_turn_label() -> void:
 
 
 func card_battle(attacker: CardStats, defender: CardStats) -> void:
-	var attack_offset = Vector2.DOWN * 55 if _is_player_turn else Vector2.UP * 55
+	var attack_offset = Vector2.DOWN if _is_player_turn else Vector2.UP
+	attack_offset *= Constants.OFFSET_CARD_HIT
 	attacker.get_parent().z_index = 1
 	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_IN)
+	tween.tween_property(attacker.get_parent(), "global_position", 
+			defender.get_parent().global_position + attack_offset, Constants.TIME_ATTACK_HIT_ANIM)
 	tween.set_trans(Tween.TRANS_EXPO)
+	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(attacker.get_parent(), "global_position", 
-			defender.get_parent().global_position + attack_offset, Constants.TIME_ATTACK_ANIM)
-	tween.set_trans(Tween.TRANS_SINE)
-	tween.tween_property(attacker.get_parent(), "global_position", 
-			attacker.get_parent().global_position, Constants.TIME_ATTACK_ANIM)
+			attacker.get_parent().global_position, Constants.TIME_ATTACK_RETURN_ANIM)
 	await tween.step_finished
 	defender.change_health(-attacker.attack)
 	attacker.change_health(-defender.attack)
@@ -91,14 +96,16 @@ func card_battle(attacker: CardStats, defender: CardStats) -> void:
 
 func face_battle(attacker: CardStats) -> void:
 	var tween = create_tween()
-	tween.set_trans(Tween.TRANS_EXPO)
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_IN)
 	if _is_player_turn:
 		#TODO: Change target when we have a PlayerFace node
 		tween.tween_property(attacker.get_parent(), "global_position", Vector2(540, 75), 
-				Constants.TIME_ATTACK_ANIM)
-		tween.set_trans(Tween.TRANS_SINE)
+				Constants.TIME_ATTACK_HIT_ANIM)
+		tween.set_trans(Tween.TRANS_EXPO)
+		tween.set_ease(Tween.EASE_OUT)
 		tween.tween_property(attacker.get_parent(), "global_position", 
-				attacker.get_parent().global_position, Constants.TIME_ATTACK_ANIM)
+				attacker.get_parent().global_position, Constants.TIME_ATTACK_RETURN_ANIM)
 		await tween.step_finished
 		_enemy_health -= attacker.attack
 		_enemy_health_label.text = str(_enemy_health)
@@ -108,10 +115,11 @@ func face_battle(attacker: CardStats) -> void:
 	else:
 		#TODO: Change target when we have a PlayerFace node
 		tween.tween_property(attacker.get_parent(), "global_position", Vector2(540, 645), 
-				Constants.TIME_ATTACK_ANIM)
-		tween.set_trans(Tween.TRANS_SINE)
+				Constants.TIME_ATTACK_HIT_ANIM)
+		tween.set_trans(Tween.TRANS_EXPO)
+		tween.set_ease(Tween.EASE_OUT)
 		tween.tween_property(attacker.get_parent(), "global_position", 
-				attacker.get_parent().global_position, Constants.TIME_ATTACK_ANIM)
+				attacker.get_parent().global_position, Constants.TIME_ATTACK_RETURN_ANIM)
 		await tween.step_finished
 		_player_health -= attacker.attack
 		_player_health_label.text = str(_player_health)
@@ -134,6 +142,24 @@ func get_board_cards(current_player: bool) -> Array[Node]:
 func _on_toggle_panels(activate: bool) -> void:
 	battlefield_panel_left.visible = activate
 	battlefield_panel_right.visible = activate
+
+
+func _on_card_released(card: CardMovement, hand_position: Vector2, on_battlefield: bool, on_left: bool) -> void:
+	if (on_battlefield and _player_board.get_child_count() < Constants.MAX_BOARD 
+			and _cards_played_this_turn < Constants.MAX_CARDS_PER_TURN):
+		_cards_played_this_turn += 1
+		var side = 1
+		card.reparent(_player_board)
+		if on_left:
+			_player_board.move_child(card, 0)
+			side = 0
+		card.clickable = false
+		card.find_child("CardStats").on_play(side)
+	else:
+		var tween = create_tween()
+		tween.set_trans(Tween.TRANS_SINE)
+		tween.tween_property(card, "global_position", hand_position, 
+				Constants.TIME_FAILED_SUMMON_ANIM)
 
 
 func _on_player_draw_button_pressed() -> void:
@@ -160,7 +186,7 @@ func _on_enemy_play_button_pressed() -> void:
 	if _enemy_deck.size() > 0:
 		if _enemy_board.get_child_count() < Constants.MAX_BOARD:
 			var new_card = _enemy_deck.pop_back()
-			new_card._clickable = false
+			new_card.clickable = false
 			_enemy_board.add_child(new_card)
 			new_card.find_child("CardStats").on_play(1)
 	else:
@@ -170,6 +196,7 @@ func _on_enemy_play_button_pressed() -> void:
 
 
 func _on_end_turn_button_pressed() -> void:
+	_cards_played_this_turn = 0
 	print("Beggining combat phase...")
 	
 	var attacker_cards = get_board_cards(true)
