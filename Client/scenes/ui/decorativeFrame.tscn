@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxl6wsfggpsb2"]
+
+[ext_resource type="Texture2D" uid="uid://bf0mj7ynb0h0h" path="res://sprites/decoration/SeparationFrame.png" id="1_jls62"]
+
+[node name="DecorativeFrame" type="NinePatchRect"]
+offset_right = 542.0
+offset_bottom = 362.0
+texture = ExtResource("1_jls62")
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40

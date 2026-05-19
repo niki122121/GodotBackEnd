@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cddpnfo5yijsw"]
+
+[ext_resource type="PackedScene" uid="uid://t2fk3ui0d2r7" path="res://scenes/ui/statsParticles.tscn" id="1_rte7n"]
+
+[node name="Prueba" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatsParticles" parent="." instance=ExtResource("1_rte7n")]
+position = Vector2(209, 309)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 83.0
+offset_top = 69.0
+offset_right = 389.4
+offset_bottom = 159.66501

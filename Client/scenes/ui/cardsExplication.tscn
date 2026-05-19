@@ -1,18 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmk47afbc0ayy"]
+[gd_scene load_steps=5 format=3 uid="uid://cmk47afbc0ayy"]
 
 [ext_resource type="PackedScene" uid="uid://dhi2sv6w8x7a2" path="res://scenes/ui/cardExamples.tscn" id="1_etk2n"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lu5ms"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.78352344, 0.7835234, 0.7835234, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[ext_resource type="PackedScene" uid="uid://bxl6wsfggpsb2" path="res://scenes/ui/decorativeFrame.tscn" id="2_cme0d"]
+[ext_resource type="FontFile" uid="uid://cc2yaqr0wqi5t" path="res://fonts/jupiterc.ttf" id="2_e153i"]
+[ext_resource type="FontFile" uid="uid://dpisbc8q5mvxl" path="res://fonts/Pixel Wow.otf" id="3_ooj5r"]
 
 [node name="CardsExplication" type="Control"]
 layout_mode = 3
@@ -23,81 +14,244 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Panel" type="Panel" parent="."]
+[node name="DecorativeFrame" parent="." instance=ExtResource("2_cme0d")]
 layout_mode = 0
-offset_right = 538.0
-offset_bottom = 358.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_lu5ms")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Title" type="Label" parent="DecorativeFrame"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.5
+offset_top = 19.0
+offset_right = 48.5
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_e153i")
+theme_override_font_sizes/font_size = 46
+text = "TITULO"
+
+[node name="Explication" type="Label" parent="DecorativeFrame"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -94.0
-offset_top = -159.5
-offset_right = 94.0
-offset_bottom = -74.5
+offset_left = -207.0
+offset_top = -97.0
+offset_right = 142.0
+offset_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Hola esto es una prueba"
+theme_override_fonts/font = ExtResource("3_ooj5r")
+theme_override_font_sizes/font_size = 21
+text = "Lorem ipsum dolor sit amet consectetur adipiscing elit urna, enim integer vestibulum malesuada curae vehicula quisque taciti."
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="CardExamples" parent="Panel" node_paths=PackedStringArray("panel") instance=ExtResource("1_etk2n")]
+[node name="CardExamples" parent="DecorativeFrame" node_paths=PackedStringArray("panel") instance=ExtResource("1_etk2n")]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -140.0
+offset_right = -32.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+panel = NodePath("../../ColorRect")
+
+[node name="DecorativeFrame2" parent="." instance=ExtResource("2_cme0d")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -538.0
+offset_right = 0.0
+grow_horizontal = 0
+
+[node name="Title" type="Label" parent="DecorativeFrame2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.5
+offset_top = 19.0
+offset_right = 48.5
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_e153i")
+theme_override_font_sizes/font_size = 46
+text = "TITULO"
+
+[node name="Explication" type="Label" parent="DecorativeFrame2"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -55.0
-offset_right = 40.0
-offset_bottom = 55.0
+offset_left = -134.5
+offset_top = -122.0
+offset_right = 214.5
+offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ooj5r")
+theme_override_font_sizes/font_size = 21
+text = "Lorem ipsum dolor sit amet consectetur adipiscing elit urna, enim integer vestibulum malesuada curae vehicula quisque taciti."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CardExamples" parent="DecorativeFrame2" node_paths=PackedStringArray("panel") instance=ExtResource("1_etk2n")]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -506.0
+offset_top = -140.0
+offset_right = -425.9999
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
 panel = NodePath("../../ColorRect")
 
-[node name="Panel2" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 542.0
-offset_right = 1080.0
-offset_bottom = 358.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_lu5ms")
+[node name="DecorativeFrame3" parent="." instance=ExtResource("2_cme0d")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -358.0
+offset_bottom = 0.0
+grow_vertical = 0
 
-[node name="Panel3" type="Panel" parent="."]
-layout_mode = 0
-offset_top = 362.0
-offset_right = 538.0
-offset_bottom = 720.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_lu5ms")
+[node name="Title" type="Label" parent="DecorativeFrame3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.5
+offset_top = -70.0
+offset_right = 48.5
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_e153i")
+theme_override_font_sizes/font_size = 46
+text = "TITULO"
 
-[node name="Panel4" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 542.0
-offset_top = 362.0
-offset_right = 1080.0
-offset_bottom = 720.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_lu5ms")
+[node name="Explication" type="Label" parent="DecorativeFrame3"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.0
+offset_top = -152.0
+offset_right = 126.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ooj5r")
+theme_override_font_sizes/font_size = 21
+text = "Lorem ipsum dolor sit amet consectetur adipiscing elit urna, enim integer vestibulum malesuada curae vehicula quisque taciti."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CardExamples" parent="DecorativeFrame3" node_paths=PackedStringArray("panel") instance=ExtResource("1_etk2n")]
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -110.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = 140.0
+grow_horizontal = 0
+panel = NodePath("../../ColorRect")
+
+[node name="DecorativeFrame4" parent="." instance=ExtResource("2_cme0d")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -538.0
+offset_top = -358.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Title" type="Label" parent="DecorativeFrame4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.5
+offset_top = -70.0
+offset_right = 48.5
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_e153i")
+theme_override_font_sizes/font_size = 46
+text = "TITULO"
+
+[node name="Explication" type="Label" parent="DecorativeFrame4"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -152.0
+offset_right = 210.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ooj5r")
+theme_override_font_sizes/font_size = 21
+text = "Lorem ipsum dolor sit amet consectetur adipiscing elit urna, enim integer vestibulum malesuada curae vehicula quisque taciti."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CardExamples" parent="DecorativeFrame4" node_paths=PackedStringArray("panel") instance=ExtResource("1_etk2n")]
+z_index = 1
+layout_mode = 1
+offset_left = 32.0
+offset_top = 27.0
+offset_right = 112.0
+offset_bottom = 137.0
+panel = NodePath("../../ColorRect")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
-z_index = 1
+z_index = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

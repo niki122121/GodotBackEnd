@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://t2fk3ui0d2r7"]
+
+[ext_resource type="Texture2D" uid="uid://bv41hires160j" path="res://sprites/particles/more_health.png" id="1_32ylc"]
+[ext_resource type="Script" uid="uid://bygp4c0jr6mpt" path="res://scripts/ui_scripts/changeDirection.gd" id="2_hbprn"]
+
+[sub_resource type="Curve" id="Curve_di22w"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.75135136, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_oubfr"]
+curve = SubResource("Curve_di22w")
+
+[sub_resource type="Curve" id="Curve_376q1"]
+_limits = [0.0, 20.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.79459465, 0), 0.0, 0.0, 0, 0, Vector2(1, 20), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_di22w"]
+curve = SubResource("Curve_376q1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cnlpa"]
+particle_flag_disable_z = true
+direction = Vector3(24, -16, 0)
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+damping_min = 20.0
+damping_max = 20.0
+damping_curve = SubResource("CurveTexture_di22w")
+scale_min = 0.19999999
+scale_max = 0.19999999
+alpha_curve = SubResource("CurveTexture_oubfr")
+
+[node name="StatsParticles" type="GPUParticles2D"]
+emitting = false
+amount = 50
+texture = ExtResource("1_32ylc")
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.3
+visibility_rect = Rect2(-100, -100, 1080, 720)
+process_material = SubResource("ParticleProcessMaterial_cnlpa")
+script = ExtResource("2_hbprn")
