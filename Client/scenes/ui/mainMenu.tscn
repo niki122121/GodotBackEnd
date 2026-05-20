@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bliu6cout3ktq"]
+[gd_scene load_steps=4 format=3 uid="uid://bliu6cout3ktq"]
 
 [ext_resource type="Script" uid="uid://bni2nwos7y5yu" path="res://scripts/ui_scripts/scenesManager.gd" id="1_b7htb"]
 [ext_resource type="PackedScene" uid="uid://b0hgerb0kgo0t" path="res://scenes/ui/parallax.tscn" id="2_yl13b"]
 [ext_resource type="PackedScene" uid="uid://ds5hv8hqh4vuf" path="res://scenes/ui/button.tscn" id="3_3uny1"]
-[ext_resource type="AudioStream" uid="uid://cvf6pnqd0hcdw" path="res://sounds/SFX/RobarCarta2.mp3" id="4_yl13b"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -64,10 +63,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Exit"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_yl13b")
-bus = &"SFX"
 
 [connection signal="pressed" from="MarginContainer/GridContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/GridContainer/Tutorial" to="." method="_on_tutorial_pressed"]

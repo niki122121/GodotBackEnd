@@ -11,12 +11,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StatsParticles" parent="." instance=ExtResource("1_rte7n")]
-position = Vector2(209, 309)
+position = Vector2(202, 189)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
 layout_mode = 0
-offset_left = 83.0
-offset_top = 69.0
-offset_right = 389.4
-offset_bottom = 159.66501
+offset_left = 99.0
+offset_top = 18.0
+offset_right = 405.4
+offset_bottom = 108.66501

@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cw2ae0duv2nwi" path="res://themes/buttonTheme.tres" id="1_ujb5l"]
 [ext_resource type="Texture2D" uid="uid://c42is2ut7kdbr" path="res://sprites/buttons/GenericButton.png" id="1_uwv6h"]
-[ext_resource type="Script" uid="uid://c0a0cqrdjvvht" path="res://scripts/ui_scripts/backToMenu.gd" id="2_norwg"]
+[ext_resource type="Script" uid="uid://c0a0cqrdjvvht" path="res://scripts/ui_scripts/backToWantedScene.gd" id="2_norwg"]
 [ext_resource type="FontFile" uid="uid://cc2yaqr0wqi5t" path="res://fonts/jupiterc.ttf" id="2_t7lg5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_norwg"]
@@ -15,7 +15,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ml2n"]
 
-[node name="Button" type="Button"]
+[node name="BackButton" type="Button"]
 texture_filter = 1
 offset_right = 232.0
 offset_bottom = 104.0

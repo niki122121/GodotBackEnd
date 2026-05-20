@@ -5,13 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://ctsothh3q6si3" path="res://sprites/cards/card_sprite_01.png" id="3_cuw6f"]
 [ext_resource type="Texture2D" uid="uid://b4p1kv1fsihlp" path="res://sprites/cards/card_sprite_02.png" id="4_ajchv"]
 
-[node name="CardExamples" type="Control" node_paths=PackedStringArray("rightCard", "leftCard")]
+[node name="CardExamples" type="Control" node_paths=PackedStringArray("firstCard", "rightCard", "leftCard")]
 custom_minimum_size = Vector2(80, 110)
 layout_mode = 3
 anchors_preset = 0
 pivot_offset = Vector2(40, 55)
 script = ExtResource("1_kv0b0")
 sizeMultiplier = 2.0
+firstCard = NodePath("FirstCard")
 rightCard = NodePath("RightCard")
 leftCard = NodePath("LeftCard")
 

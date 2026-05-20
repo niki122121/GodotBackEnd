@@ -44,6 +44,7 @@ anchor_bottom = 1.0
 offset_top = -104.0
 offset_bottom = 0.0
 grow_vertical = 0
+scene = "mainMenu"
 
 [node name="nextButton" parent="." instance=ExtResource("5_nrihu")]
 layout_mode = 1

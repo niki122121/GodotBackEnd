@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ds5hv8hqh4vuf"]
+[gd_scene load_steps=11 format=3 uid="uid://ds5hv8hqh4vuf"]
 
 [ext_resource type="Theme" uid="uid://cw2ae0duv2nwi" path="res://themes/buttonTheme.tres" id="1_0kpiu"]
 [ext_resource type="Texture2D" uid="uid://c42is2ut7kdbr" path="res://sprites/buttons/GenericButton.png" id="1_1cmwl"]
 [ext_resource type="FontFile" uid="uid://cc2yaqr0wqi5t" path="res://fonts/jupiterc.ttf" id="2_vgxan"]
+[ext_resource type="AudioStream" uid="uid://d0x1oxvci7eqg" path="res://sounds/SFX/genericButtonSound.mp3" id="4_mrrss"]
+[ext_resource type="Script" uid="uid://btmpjd1oi12rk" path="res://scripts/ui_scripts/reparentButtonAudio.gd" id="4_y0w6a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cmwl"]
 
@@ -14,7 +16,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_edukx"]
 
-[node name="Button" type="Button"]
+[node name="Button" type="Button" node_paths=PackedStringArray("audio")]
 texture_filter = 1
 offset_right = 232.0
 offset_bottom = 104.0
@@ -31,3 +33,12 @@ text = "Play"
 icon = ExtResource("1_1cmwl")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("4_y0w6a")
+audio = NodePath("AudioStreamPlayer2D")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_mrrss")
+bus = &"SFX"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="." to="AudioStreamPlayer2D" method="_on_button_pressed"]

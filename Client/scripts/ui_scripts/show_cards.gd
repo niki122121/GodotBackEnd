@@ -1,6 +1,13 @@
 extends Control
 
 @export var sizeMultiplier:float
+
+#New textures for the sprites
+@export var firstImage: Texture2D
+@export var rightImage: Texture2D
+@export var leftImage: Texture2D
+
+@export var firstCard:Sprite2D
 @export var rightCard:Sprite2D
 @export var leftCard:Sprite2D
 @export var panel:ColorRect
@@ -9,9 +16,12 @@ var leftOrigin:Vector2
 var currentTween:Tween
 
 func _ready() -> void:
+	firstCard.texture = firstImage
+	rightCard.texture = rightImage
+	leftCard.texture = leftImage
+	
 	rightOrigin = rightCard.position
 	leftOrigin = leftCard.position
-	print(rightOrigin)
 	
 
 func _on_mouse_entered() -> void:

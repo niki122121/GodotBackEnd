@@ -28,13 +28,3 @@ func _process(_delta: float) -> void:
 		if image is Sprite2D:
 			image.position = Vector2(offsetX * parallaxOffsets[count] * globalParallaxAdjust, offsetY * parallaxOffsets[count] * globalParallaxAdjust)
 			count += 1
-
-#func returnPos():
-	#var tween
-	#for image in get_children():
-		#if image is Sprite2D:
-			#tween = create_tween()
-			#tween.tween_property(image, "position", Vector2(0, 0), 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	#
-	#await tween.finished
-	#self.set_script(null)

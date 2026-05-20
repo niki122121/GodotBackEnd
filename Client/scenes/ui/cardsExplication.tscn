@@ -1,9 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmk47afbc0ayy"]
+[gd_scene load_steps=18 format=3 uid="uid://cmk47afbc0ayy"]
 
 [ext_resource type="PackedScene" uid="uid://dhi2sv6w8x7a2" path="res://scenes/ui/cardExamples.tscn" id="1_etk2n"]
 [ext_resource type="PackedScene" uid="uid://bxl6wsfggpsb2" path="res://scenes/ui/decorativeFrame.tscn" id="2_cme0d"]
 [ext_resource type="FontFile" uid="uid://cc2yaqr0wqi5t" path="res://fonts/jupiterc.ttf" id="2_e153i"]
 [ext_resource type="FontFile" uid="uid://dpisbc8q5mvxl" path="res://fonts/Pixel Wow.otf" id="3_ooj5r"]
+[ext_resource type="Texture2D" uid="uid://51ev7uvwf304" path="res://sprites/cards/card_sprite_03.png" id="5_4hr0j"]
+[ext_resource type="Texture2D" uid="uid://d1oi7ya6qg8ox" path="res://sprites/cards/card_sprite_26.png" id="6_4hr0j"]
+[ext_resource type="Texture2D" uid="uid://cgouxxpystux3" path="res://sprites/cards/card_sprite_16.png" id="7_yhrqm"]
+[ext_resource type="Texture2D" uid="uid://dlryrkfu0xdec" path="res://sprites/cards/card_sprite_30.png" id="8_bbse7"]
+[ext_resource type="Texture2D" uid="uid://d2k3b5twelxjm" path="res://sprites/cards/card_sprite_11.png" id="9_qms3x"]
+[ext_resource type="Texture2D" uid="uid://byoqbpymj4hsg" path="res://sprites/cards/card_sprite_32.png" id="10_b8170"]
+[ext_resource type="Texture2D" uid="uid://bdv430noob0w8" path="res://sprites/cards/card_sprite_05.png" id="11_b8170"]
+[ext_resource type="Texture2D" uid="uid://v8pkenm65dqj" path="res://sprites/cards/card_sprite_04.png" id="12_bjaua"]
+[ext_resource type="Texture2D" uid="uid://bqs6y2brvq4kc" path="res://sprites/cards/card_sprite_10.png" id="13_purjv"]
+[ext_resource type="Texture2D" uid="uid://belb0h1mewriy" path="res://sprites/cards/card_sprite_22.png" id="14_kkanc"]
+[ext_resource type="Texture2D" uid="uid://cp1vmkx6ttj05" path="res://sprites/cards/card_sprite_37.png" id="15_0i7at"]
+[ext_resource type="PackedScene" uid="uid://yegdrjt34u3u" path="res://scenes/ui/backButton.tscn" id="16_0i7at"]
+[ext_resource type="PackedScene" uid="uid://ds5hv8hqh4vuf" path="res://scenes/ui/button.tscn" id="17_yqlle"]
 
 [node name="CardsExplication" type="Control"]
 layout_mode = 3
@@ -13,6 +26,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="BackButton" parent="." instance=ExtResource("16_0i7at")]
+z_index = 1
+layout_mode = 0
+offset_left = 13.0
+offset_top = 631.0
+offset_right = 198.0
+offset_bottom = 707.0
+scene = "tutorial"
+
+[node name="Next" parent="." instance=ExtResource("17_yqlle")]
+z_index = 1
+layout_mode = 0
+offset_left = 883.0
+offset_top = 631.0
+offset_right = 1068.0
+offset_bottom = 707.0
+text = "Next"
 
 [node name="DecorativeFrame" parent="." instance=ExtResource("2_cme0d")]
 layout_mode = 0
@@ -27,6 +58,7 @@ offset_top = 19.0
 offset_right = 48.5
 offset_bottom = 68.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_e153i")
 theme_override_font_sizes/font_size = 46
 text = "TITULO"
@@ -40,11 +72,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -207.0
-offset_top = -97.0
+offset_top = -123.0
 offset_right = 142.0
-offset_bottom = 147.0
+offset_bottom = 121.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ooj5r")
 theme_override_font_sizes/font_size = 21
 text = "Lorem ipsum dolor sit amet consectetur adipiscing elit urna, enim integer vestibulum malesuada curae vehicula quisque taciti."
@@ -66,6 +99,9 @@ offset_right = -32.0
 offset_bottom = -30.0
 grow_horizontal = 0
 grow_vertical = 0
+firstImage = ExtResource("5_4hr0j")
+rightImage = ExtResource("6_4hr0j")
+leftImage = ExtResource("7_yhrqm")
 panel = NodePath("../../ColorRect")
 
 [node name="DecorativeFrame2" parent="." instance=ExtResource("2_cme0d")]
@@ -87,6 +123,7 @@ offset_top = 19.0
 offset_right = 48.5
 offset_bottom = 68.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_e153i")
 theme_override_font_sizes/font_size = 46
 text = "TITULO"
@@ -105,6 +142,7 @@ offset_right = 214.5
 offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ooj5r")
 theme_override_font_sizes/font_size = 21
 text = "Lorem ipsum dolor sit amet consectetur adipiscing elit urna, enim integer vestibulum malesuada curae vehicula quisque taciti."
@@ -126,6 +164,9 @@ offset_right = -425.9999
 offset_bottom = -30.0
 grow_horizontal = 0
 grow_vertical = 0
+firstImage = ExtResource("9_qms3x")
+rightImage = ExtResource("8_bbse7")
+leftImage = ExtResource("10_b8170")
 panel = NodePath("../../ColorRect")
 
 [node name="DecorativeFrame3" parent="." instance=ExtResource("2_cme0d")]
@@ -150,6 +191,7 @@ offset_right = 48.5
 offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_e153i")
 theme_override_font_sizes/font_size = 46
 text = "TITULO"
@@ -168,6 +210,7 @@ offset_right = 126.0
 offset_bottom = 92.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ooj5r")
 theme_override_font_sizes/font_size = 21
 text = "Lorem ipsum dolor sit amet consectetur adipiscing elit urna, enim integer vestibulum malesuada curae vehicula quisque taciti."
@@ -186,6 +229,9 @@ offset_top = 30.0
 offset_right = -30.0
 offset_bottom = 140.0
 grow_horizontal = 0
+firstImage = ExtResource("6_4hr0j")
+rightImage = ExtResource("11_b8170")
+leftImage = ExtResource("12_bjaua")
 panel = NodePath("../../ColorRect")
 
 [node name="DecorativeFrame4" parent="." instance=ExtResource("2_cme0d")]
@@ -215,6 +261,7 @@ offset_right = 48.5
 offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_e153i")
 theme_override_font_sizes/font_size = 46
 text = "TITULO"
@@ -233,6 +280,7 @@ offset_right = 210.0
 offset_bottom = 92.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ooj5r")
 theme_override_font_sizes/font_size = 21
 text = "Lorem ipsum dolor sit amet consectetur adipiscing elit urna, enim integer vestibulum malesuada curae vehicula quisque taciti."
@@ -247,6 +295,9 @@ offset_left = 32.0
 offset_top = 27.0
 offset_right = 112.0
 offset_bottom = 137.0
+firstImage = ExtResource("15_0i7at")
+rightImage = ExtResource("14_kkanc")
+leftImage = ExtResource("13_purjv")
 panel = NodePath("../../ColorRect")
 
 [node name="ColorRect" type="ColorRect" parent="."]
