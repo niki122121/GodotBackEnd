@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cmk47afbc0ayy"]
+[gd_scene load_steps=17 format=3 uid="uid://cmk47afbc0ayy"]
 
 [ext_resource type="PackedScene" uid="uid://dhi2sv6w8x7a2" path="res://scenes/ui/cardExamples.tscn" id="1_etk2n"]
 [ext_resource type="PackedScene" uid="uid://bxl6wsfggpsb2" path="res://scenes/ui/decorativeFrame.tscn" id="2_cme0d"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://bqs6y2brvq4kc" path="res://sprites/cards/card_sprite_10.png" id="13_purjv"]
 [ext_resource type="Texture2D" uid="uid://belb0h1mewriy" path="res://sprites/cards/card_sprite_22.png" id="14_kkanc"]
 [ext_resource type="Texture2D" uid="uid://cp1vmkx6ttj05" path="res://sprites/cards/card_sprite_37.png" id="15_0i7at"]
-[ext_resource type="PackedScene" uid="uid://yegdrjt34u3u" path="res://scenes/ui/backButton.tscn" id="16_0i7at"]
 [ext_resource type="PackedScene" uid="uid://ds5hv8hqh4vuf" path="res://scenes/ui/button.tscn" id="17_yqlle"]
 
 [node name="CardsExplication" type="Control"]
@@ -27,22 +26,35 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="BackButton" parent="." instance=ExtResource("16_0i7at")]
+[node name="Back" parent="." instance=ExtResource("17_yqlle")]
 z_index = 1
-layout_mode = 0
-offset_left = 13.0
-offset_top = 631.0
-offset_right = 198.0
-offset_bottom = 707.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -92.0
+offset_right = 199.0
+offset_bottom = -16.0
+grow_vertical = 0
+text = "Back"
 scene = "tutorial"
+changeScene = true
 
 [node name="Next" parent="." instance=ExtResource("17_yqlle")]
 z_index = 1
-layout_mode = 0
-offset_left = 883.0
-offset_top = 631.0
-offset_right = 1068.0
-offset_bottom = 707.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_top = -92.0
+offset_right = -11.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "Next"
 
 [node name="DecorativeFrame" parent="." instance=ExtResource("2_cme0d")]

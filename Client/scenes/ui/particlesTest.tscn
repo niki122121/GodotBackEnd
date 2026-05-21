@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cddpnfo5yijsw"]
 
-[ext_resource type="PackedScene" uid="uid://t2fk3ui0d2r7" path="res://scenes/ui/statsParticles.tscn" id="1_rte7n"]
+[ext_resource type="PackedScene" uid="uid://t2fk3ui0d2r7" path="res://scenes/ui/statsParticles.tscn" id="1_ke5kl"]
 
-[node name="Prueba" type="Control"]
+[node name="ParticlesTest" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StatsParticles" parent="." instance=ExtResource("1_rte7n")]
+[node name="StatsParticles" parent="." instance=ExtResource("1_ke5kl")]
 position = Vector2(202, 189)
 
 [node name="ColorRect" type="ColorRect" parent="."]

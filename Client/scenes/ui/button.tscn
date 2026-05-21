@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c42is2ut7kdbr" path="res://sprites/buttons/GenericButton.png" id="1_1cmwl"]
 [ext_resource type="FontFile" uid="uid://cc2yaqr0wqi5t" path="res://fonts/jupiterc.ttf" id="2_vgxan"]
 [ext_resource type="AudioStream" uid="uid://d0x1oxvci7eqg" path="res://sounds/SFX/genericButtonSound.mp3" id="4_mrrss"]
-[ext_resource type="Script" uid="uid://btmpjd1oi12rk" path="res://scripts/ui_scripts/reparentButtonAudio.gd" id="4_y0w6a"]
+[ext_resource type="Script" uid="uid://btmpjd1oi12rk" path="res://scripts/ui_scripts/ButtonsManager.gd" id="4_y0w6a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cmwl"]
 

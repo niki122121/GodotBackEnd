@@ -45,24 +45,31 @@ columns = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+scene = "playMenu"
+changeScene = true
 
 [node name="Tutorial" parent="MarginContainer/GridContainer" instance=ExtResource("3_3uny1")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Tutorial"
+scene = "tutorial"
+changeScene = true
 
 [node name="Settings" parent="MarginContainer/GridContainer" instance=ExtResource("3_3uny1")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Settings"
+scene = "settings"
+changeScene = true
 
 [node name="Exit" parent="MarginContainer/GridContainer" instance=ExtResource("3_3uny1")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Exit"
+script = null
 
 [connection signal="pressed" from="MarginContainer/GridContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/GridContainer/Tutorial" to="." method="_on_tutorial_pressed"]
